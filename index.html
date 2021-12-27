@@ -8,7 +8,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./public/images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
   </head>
   <body>
     <header>
@@ -62,14 +62,14 @@
             <button class="hero-btn">Get Started</button>
           </div>
           <div class="col-md-6">
-            <img src="./images/illustration-working.svg" alt="" />
+            <img src="./public/images/illustration-working.svg" alt="" />
           </div>
         </div>
       </div>
     </div>
     <div class="form-section">
       <div class="container">
-        <form>
+        <form name="urlForm" id="url-form">
           <input
             type="text"
             name="url"
@@ -78,6 +78,11 @@
           />
           <input type="submit" value="Shorten It!" />
         </form>
+      </div>
+    </div>
+    <div class="result-section">
+      <div class="container">
+        <div id="results-wrapper"></div>
       </div>
     </div>
     <div class="advance-section">
@@ -187,6 +192,7 @@
           >.
         </div>
       </div>
+      <script type="module" src="./public/js/script.js"></script>
     </footer>
   </body>
 </html>
