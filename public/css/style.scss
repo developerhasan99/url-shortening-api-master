@@ -18,10 +18,10 @@ button {
 }
 
 header {
-  padding: 44px 0;
+  padding: 40px 0;
   nav {
-    display: grid;
-    grid-template-columns: 160px auto;
+    display: flex;
+    justify-content: space-between;
     .logo {
       a {
         text-decoration: none;
@@ -31,15 +31,21 @@ header {
       }
     }
     .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      .mobile-nav-padding {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      ul:first-child {
+        margin-right: 1rem;
+      }
       ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        display: flex;
+        align-items: center;
         li {
-          display: inline-block;
           margin: 0 10px;
           a {
             text-decoration: none;
@@ -55,6 +61,12 @@ header {
         border-radius: 25px;
         background-color: hsl(180, 66%, 49%);
       }
+    }
+    .nav-button-closer,
+    .nav-button-opener {
+      border: 0;
+      background-color: transparent;
+      display: none;
     }
   }
 }
@@ -125,8 +137,9 @@ header {
     background-color: #fff;
     padding: 12px;
     border-radius: 5px;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     align-items: center;
     margin-bottom: 1rem;
     .url {
@@ -134,7 +147,10 @@ header {
       font-weight: 400;
     }
     .shorturl-wrapper {
+      margin-left: auto;
       display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
       justify-content: end;
       align-items: center;
       .short-url {
@@ -143,7 +159,6 @@ header {
       }
       .delete-url,
       .copy-url {
-        margin-left: 25px;
         border: 0;
         color: #fff;
         background-color: hsl(180, 66%, 49%);
@@ -367,7 +382,44 @@ footer {
         }
       }
       .nav-wrapper {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        overflow: hidden;
+        height: 100%;
+        background-color: #f0f1f7;
+        z-index: 999;
+        transition: 0.3s ease-in-out;
+        .mobile-nav-padding {
+          display: block;
+          padding: 15px;
+        }
+        ul:last-child li:first-child{
+          margin-bottom: 1rem;
+        }
+        ul {
+          display: block;
+          li {
+            margin: 0;
+            a {
+              text-align: center;
+              display: block;
+              padding: 15px;
+              color: #343340;
+            }
+          }
+        }
+        ul:last-child li:last-child a {
+
+          padding: 15px 20px;
+
+        }
+      }
+      .nav-button-closer,
+      .nav-button-opener {
+        display: block;
+        margin-left: auto;
       }
     }
   }

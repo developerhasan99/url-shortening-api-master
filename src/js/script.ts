@@ -1,5 +1,3 @@
-console.time("test");
-
 import { createUrl } from "./createUrl.js";
 import { db, updateState } from "./state.js";
 import { renderUi } from "./renderUi.js";
@@ -23,4 +21,22 @@ urlForm.addEventListener("submit", (e: Event) => {
   }
 });
 
-console.timeEnd("test");
+//Mobile Nav Functionalities
+
+const mobileNavOpener = document.querySelector(
+  ".nav-button-opener"
+) as HTMLButtonElement;
+const mobileNavCloser = document.querySelector(
+  ".nav-button-closer"
+) as HTMLButtonElement;
+const mobileNavWrapper = document.querySelector(
+  ".nav-wrapper"
+) as HTMLDivElement;
+
+mobileNavOpener.addEventListener("click", function () {
+  mobileNavWrapper.style.width = "100%";
+});
+
+mobileNavCloser.addEventListener("click", function () {
+  mobileNavWrapper.style.width = "0";
+});

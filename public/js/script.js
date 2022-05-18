@@ -1,4 +1,3 @@
-console.time("test");
 import { createUrl } from "./createUrl.js";
 import { db, updateState } from "./state.js";
 import { renderUi } from "./renderUi.js";
@@ -19,4 +18,13 @@ urlForm.addEventListener("submit", (e) => {
         console.log("invalid url");
     }
 });
-console.timeEnd("test");
+//Mobile Nav Functionalities
+const mobileNavOpener = document.querySelector(".nav-button-opener");
+const mobileNavCloser = document.querySelector(".nav-button-closer");
+const mobileNavWrapper = document.querySelector(".nav-wrapper");
+mobileNavOpener.addEventListener("click", function () {
+    mobileNavWrapper.style.width = "100%";
+});
+mobileNavCloser.addEventListener("click", function () {
+    mobileNavWrapper.style.width = "0";
+});
